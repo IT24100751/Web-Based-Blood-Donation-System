@@ -85,10 +85,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const isPending = request.status === 'Pending';
 
             row.innerHTML = `
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${request.id}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${request.bloodType}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${request.units}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${request.urgency}</td>
+                <td class="px-8 py-6 whitespace-nowrap text-xl font-weight: 600">${request.id}</td>
+                <td class="px-8 py-6 whitespace-nowrap text-xl font-weight: 600">${request.bloodType}</td>
+                <td class="px-8 py-6 whitespace-nowrap text-xl font-weight: 600">${request.units}</td>
+                <td class="px-8 py-6 whitespace-nowrap text-xl font-weight: 600">${request.urgency}</td>
                 <td class="px-6 py-4 whitespace-nowrap">
                     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
                         ${getStatusClass(request.status)}">
