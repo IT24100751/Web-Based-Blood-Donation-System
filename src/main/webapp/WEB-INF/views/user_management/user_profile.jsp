@@ -15,9 +15,16 @@
     <nav class="bg-red-600 text-white p-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <a href="/" class="text-2xl font-bold">Blood Donation System</a>
-            <div class="space-x-4">
-                <a href="/" class="hover:text-red-200"><i class="fas fa-home mr-1"></i> Home</a>
+            <div class="absolute top-4 right-6 flex items-center space-x-6 text-white font-semibold">
+                <a href="/" class="hover:text-gray-300 flex items-center">
+                    <i class="fas fa-home mr-2"></i> Home
+                </a>
+                <button type="button" id="logoutBtn" class="hover:text-gray-300 flex items-center">
+                    <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                </button>
             </div>
+
+
         </div>
     </nav>
 
@@ -115,9 +122,7 @@
                         </button>
                     </div>
                     <div class="flex space-x-4">
-                        <button type="button" id="logoutBtn" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300 flex items-center">
-                            <i class="fas fa-sign-out-alt mr-2"></i> Logout
-                        </button>
+
                         <button type="button" id="deleteAccountBtn" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-lg transition duration-300 flex items-center">
                             <i class="fas fa-user-times mr-2"></i> Delete Account
                         </button>

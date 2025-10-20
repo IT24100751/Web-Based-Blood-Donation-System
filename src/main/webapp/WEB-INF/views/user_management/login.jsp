@@ -79,9 +79,7 @@
                         <input id="remember" name="remember" type="checkbox" class="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded">
                         <label for="remember" class="ml-2 block text-sm text-gray-700">Remember me</label>
                     </div>
-                    <div class="text-sm">
-                        <a href="#" class="font-medium text-red-600 hover:text-red-500">Forgot your password?</a>
-                    </div>
+
                 </div>
                 
                 <!-- Submit Button -->
@@ -104,31 +102,7 @@
         </div>
     </div>
     
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-auto">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <h3 class="text-xl font-bold mb-2">Blood Donation System</h3>
-                    <p class="text-gray-400">Connecting donors with those in need</p>
-                </div>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-            <hr class="border-gray-700 my-6">
-            <p class="text-center text-gray-400">© 2025 Blood Donation System. All rights reserved.</p>
-        </div>
-    </footer>
-    
+
     <!-- JavaScript -->
     <script src="${pageContext.request.contextPath}/js/user_management/login.js"></script>
 </body>
