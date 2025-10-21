@@ -40,6 +40,7 @@
                     <div class="relative">
                         <input type="text" id="searchInput" placeholder="Search..." class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
                         <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
+
                     </div>
                 </div>
                 <div class="w-full md:w-1/3">
@@ -97,7 +98,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-100 text-center p-4 mt-60 ">
+    <footer class="bg-red-100 text-center p-4 mt-60 ">
         <p class="text-gray-600">© 2025 Blood Donation System. All rights reserved.</p>
     </footer>
 
