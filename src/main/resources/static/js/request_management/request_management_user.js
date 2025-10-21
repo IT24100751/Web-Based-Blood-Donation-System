@@ -3,8 +3,49 @@
  * Handles CRUD operations for blood requests
  */
 
+
 document.addEventListener('DOMContentLoaded', function() {
-    // DOM Elements
+
+/////////////////////////////////
+    const table = document.querySelector('table'); // or use your table's ID if it has one
+    const thead = document.createElement('thead');
+    thead.className = 'bg-gray-300 text-white';
+
+    thead.innerHTML = `
+  <tr>
+    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-400 sticky top-0">Request ID</th>
+    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-400 sticky top-0">Blood Group</th>
+    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-400 sticky top-0">Units Needed</th>
+    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-400 sticky top-0">Urgency</th>
+    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-400 sticky top-0">Status</th>
+    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-400 sticky top-0">Requested On</th>
+    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-400 sticky top-0">Actions</th>
+  </tr>
+`;
+
+    table.prepend(thead);
+/////////////////////////////////////
+    const footer = document.createElement('footer');
+
+    // 🧭 Make request table scrollable
+    const tableContainer = document.getElementById('requestsTableBody').parentElement.parentElement;
+    tableContainer.style.maxHeight = '550px'; // adjust height as needed
+    tableContainer.style.overflowY = 'auto';
+    tableContainer.style.display = 'block';
+
+    footer.className = 'fixed bottom-0 left-0 w-full py-6 text-center text-white bg-red-600 shadow-lg';
+
+    footer.innerHTML = `
+  <p class="text-lg font-semibold mb-2">“Every drop of blood counts — together, we save lives.”</p>
+  <p class="mb-2">📍 123 Life Saver Street, Colombo, Sri Lanka</p>
+  <p class="mb-2">📞 Hotline: <a href="tel:+94112223344" class="text-white underline hover:text-gray-200">+94 11 222 3344</a></p>
+  <p class="mb-2">📧 Email: <a href="mailto:info@blooddonation.lk" class="text-white underline hover:text-gray-200">info@blooddonation.lk</a></p>
+  <p class="text-xs opacity-80">© 2025 Blood Donation Platform. All rights reserved.</p>
+`;
+
+    document.body.appendChild(footer);
+
+
     const createRequestBtn = document.getElementById('createRequestBtn');
     const createRequestForm = document.getElementById('createRequestForm');
     const editRequestForm = document.getElementById('editRequestForm');
@@ -76,6 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         requests.forEach(request => {
             const row = document.createElement('tr');
+            row.className = "bg-white even:bg-gray-50 hover:bg-gray-100 transition-colors duration-200";
+
 
             // Format date
             const createdDate = new Date(request.createdAt);
@@ -85,18 +128,18 @@ document.addEventListener('DOMContentLoaded', function() {
             const isPending = request.status === 'Pending';
 
             row.innerHTML = `
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${request.id}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${request.bloodType}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${request.units}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${request.urgency}</td>
+                <td class="px-8 py-6 whitespace-nowrap text-lg font-semibold" >${request.id}</td>
+                <td class="px-8 py-6 whitespace-nowrap text-lg font-medium text-black text-center align-middle">${request.bloodType}</td>
+                <td class="px-8 py-6 whitespace-nowrap text-lg font-semibold : 600">${request.units}</td>
+                <td class="px-8 py-6 whitespace-nowrap text-lg font-bold: 600">${request.urgency}</td>
                 <td class="px-6 py-4 whitespace-nowrap">
                     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
                         ${getStatusClass(request.status)}">
                         ${request.status}
                     </span>
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${formattedDate}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                <td class="px-8 py-6 whitespace-nowrap text-lg font-medium text-black">${formattedDate}</td>
+                <td class="px-8 py-6 whitespace-nowrap text-lg font-medium">
                     <button class="text-indigo-600 hover:text-indigo-900 mr-3 ${isPending ? '' : 'opacity-50 cursor-not-allowed'}" 
                         ${isPending ? `onclick="openEditModal(${JSON.stringify(request).replace(/"/g, '&quot;')})"` : 'disabled'}>
                         <i class="fas fa-edit"></i>
@@ -107,6 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </button>
                 </td>
             `;
+            // Add footer here
 
             requestsTableBody.appendChild(row);
         });
