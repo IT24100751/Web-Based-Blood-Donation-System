@@ -24,113 +24,123 @@
                 </button>
             </div>
 
-
         </div>
     </nav>
 
     <!-- Main Content -->
-    <div class="container mx-auto py-8 px-4">
-        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
-            <h1 class="text-2xl font-bold text-red-600 mb-6 flex items-center">
-                <i class="fas fa-user-circle text-3xl mr-2"></i> User Profile
-            </h1>
+    <div class="container mx-auto py-10 px-6">
+        <div class="max-w-5xl mx-auto bg-white/90 backdrop-blur-md border border-gray-200 shadow-lg rounded-2xl p-8">
+            <!-- Header -->
+            <div class="flex items-center mb-8">
+                <div class="bg-red-100 text-red-600 p-3 rounded-full mr-3">
+                    <i class="fas fa-user-circle text-3xl"></i>
+                </div>
+                <h1 class="text-3xl font-bold text-gray-800">User Profile</h1>
+            </div>
 
             <!-- Alert Messages -->
-            <div id="successAlert" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
-                <span class="block sm:inline" id="successMessage"></span>
-                <button type="button" class="absolute top-0 right-0 px-4 py-3" onclick="document.getElementById('successAlert').classList.add('hidden')">
+            <div id="successAlert"
+                 class="hidden bg-green-50 border border-green-300 text-green-800 px-5 py-3 rounded-lg mb-4 flex justify-between items-center shadow-sm">
+                <span id="successMessage"></span>
+                <button type="button" onclick="document.getElementById('successAlert').classList.add('hidden')">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            
-            <div id="errorAlert" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
-                <span class="block sm:inline" id="errorMessage"></span>
-                <button type="button" class="absolute top-0 right-0 px-4 py-3" onclick="document.getElementById('errorAlert').classList.add('hidden')">
+
+            <div id="errorAlert"
+                 class="hidden bg-red-50 border border-red-300 text-red-800 px-5 py-3 rounded-lg mb-4 flex justify-between items-center shadow-sm">
+                <span id="errorMessage"></span>
+                <button type="button" onclick="document.getElementById('errorAlert').classList.add('hidden')">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
 
             <!-- User Profile Form -->
-            <form id="userProfileForm" class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form id="userProfileForm" class="space-y-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <!-- Personal Information -->
-                    <div class="space-y-4">
-                        <h2 class="text-xl font-semibold text-gray-700 border-b pb-2">
-                            <i class="fas fa-id-card mr-2"></i> Personal Information
+                    <div class="space-y-5">
+                        <h2 class="text-xl font-semibold text-gray-700 border-b pb-2 flex items-center gap-2">
+                            <i class="fas fa-id-card text-red-500"></i> Personal Information
                         </h2>
-                        
-                        <div class="form-group">
-                            <label for="firstName" class="block text-gray-700 font-medium mb-1">First Name</label>
-                            <input type="text" id="firstName" name="firstName" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
-                            <p id="firstNameError" class="text-red-500 text-sm mt-1 hidden"></p>
+
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-600 mb-1">First Name</label>
+                            <input type="text" id="firstName" name="firstName"
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                            <p id="firstNameError" class="text-red-500 text-xs mt-1 hidden"></p>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="lastName" class="block text-gray-700 font-medium mb-1">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
-                            <p id="lastNameError" class="text-red-500 text-sm mt-1 hidden"></p>
+
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-600 mb-1">Last Name</label>
+                            <input type="text" id="lastName" name="lastName"
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                            <p id="lastNameError" class="text-red-500 text-xs mt-1 hidden"></p>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="gender" class="block text-gray-700 font-medium mb-1">Gender</label>
-                            <select id="gender" name="gender" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+
+                        <div>
+                            <label for="gender" class="block text-sm font-medium text-gray-600 mb-1">Gender</label>
+                            <select id="gender" name="gender"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
                                 <option value="">Select Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Other">Other</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
                             </select>
-                            <p id="genderError" class="text-red-500 text-sm mt-1 hidden"></p>
+                            <p id="genderError" class="text-red-500 text-xs mt-1 hidden"></p>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="age" class="block text-gray-700 font-medium mb-1">Age</label>
-                            <input type="number" id="age" name="age" min="18" max="65" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
-                            <p id="ageError" class="text-red-500 text-sm mt-1 hidden"></p>
+
+                        <div>
+                            <label for="age" class="block text-sm font-medium text-gray-600 mb-1">Age</label>
+                            <input type="number" id="age" name="age" min="18" max="65"
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                            <p id="ageError" class="text-red-500 text-xs mt-1 hidden"></p>
                         </div>
                     </div>
-                    
+
                     <!-- Contact Information -->
-                    <div class="space-y-4">
-                        <h2 class="text-xl font-semibold text-gray-700 border-b pb-2">
-                            <i class="fas fa-address-book mr-2"></i> Contact Information
+                    <div class="space-y-5">
+                        <h2 class="text-xl font-semibold text-gray-700 border-b pb-2 flex items-center gap-2">
+                            <i class="fas fa-address-book text-red-500"></i> Contact Information
                         </h2>
-                        
-                        <div class="form-group">
-                            <label for="email" class="block text-gray-700 font-medium mb-1">Email</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
-                            <p id="emailError" class="text-red-500 text-sm mt-1 hidden"></p>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-600 mb-1">Email</label>
+                            <input type="email" id="email" name="email"
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                            <p id="emailError" class="text-red-500 text-xs mt-1 hidden"></p>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="contactNumber" class="block text-gray-700 font-medium mb-1">Contact Number</label>
-                            <input type="tel" id="contactNumber" name="contactNumber" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
-                            <p id="contactNumberError" class="text-red-500 text-sm mt-1 hidden"></p>
+
+                        <div>
+                            <label for="contactNumber" class="block text-sm font-medium text-gray-600 mb-1">Contact Number</label>
+                            <input type="tel" id="contactNumber" name="contactNumber"
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                            <p id="contactNumberError" class="text-red-500 text-xs mt-1 hidden"></p>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="role" class="block text-gray-700 font-medium mb-1">Role</label>
-                            <input type="text" id="role" name="role" class="w-full px-4 py-2 border rounded-lg bg-gray-100" readonly>
+
+                        <div>
+                            <label for="role" class="block text-sm font-medium text-gray-600 mb-1">Role</label>
+                            <input type="text" id="role" name="role"
+                                   class="w-full px-4 py-2 border border-gray-200 bg-gray-50 text-gray-600 rounded-lg cursor-not-allowed" readonly>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Action Buttons -->
-                <div class="flex flex-col sm:flex-row justify-between space-y-4 sm:space-y-0 sm:space-x-4 pt-4 border-t">
-                    <div>
-                        <button type="submit" id="updateProfileBtn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300 flex items-center">
-                            <i class="fas fa-save mr-2"></i> Update Profile
-                        </button>
-                    </div>
-                    <div class="flex space-x-4">
 
-                        <button type="button" id="deleteAccountBtn" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-lg transition duration-300 flex items-center">
-                            <i class="fas fa-user-times mr-2"></i> Delete Account
-                        </button>
-                    </div>
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row justify-end items-center gap-4 border-t pt-6">
+                    <button type="submit" id="updateProfileBtn"
+                            class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg flex items-center gap-2 shadow transition">
+                        <i class="fas fa-save"></i> Update Profile
+                    </button>
+                    <button type="button" id="deleteAccountBtn"
+                            class="bg-gray-100 hover:bg-red-50 text-red-600 font-semibold py-2 px-6 rounded-lg flex items-center gap-2 border border-red-200 transition">
+                        <i class="fas fa-user-times"></i> Delete Account
+                    </button>
                 </div>
             </form>
         </div>
     </div>
+
 
     <!-- Delete Confirmation Modal -->
     <div id="deleteModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50 hidden">
