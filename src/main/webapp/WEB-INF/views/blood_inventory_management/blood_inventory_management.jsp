@@ -97,7 +97,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-100 text-center p-4 mt-60">
+    <footer class="bg-gray-100 text-center p-4 mt-60 ">
         <p class="text-gray-600">© 2025 Blood Donation System. All rights reserved.</p>
     </footer>
 
