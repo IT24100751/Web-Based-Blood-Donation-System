@@ -6,11 +6,13 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-/////////////////////////////////
+
+
+
     const table = document.querySelector('table'); // or use your table's ID if it has one
     const thead = document.createElement('thead');
     thead.className = 'bg-gray-300 text-white';
-
+//headers of the table
     thead.innerHTML = `
   <tr>
     <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-400 sticky top-0">Request ID</th>
@@ -24,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 `;
 
     table.prepend(thead);
-/////////////////////////////////////
+
     const footer = document.createElement('footer');
 
     // 🧭 Make request table scrollable
@@ -34,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     tableContainer.style.display = 'block';
 
     footer.className = 'fixed bottom-0 left-0 w-full py-6 text-center text-white bg-red-600 shadow-lg';
-
+//footer
     footer.innerHTML = `
   <p class="text-lg font-semibold mb-2">“Every drop of blood counts — together, we save lives.”</p>
   <p class="mb-2">📍 123 Life Saver Street, Colombo, Sri Lanka</p>
@@ -91,7 +93,27 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(requests => {
                 showLoading(false);
+
+
+
+
                 displayRequests(requests);
+
+                ///////////////
+
+
+                let allRequests = []; // global variable to store all fetched requests
+
+                function applyBloodGroupFilter() {
+                    const selectedGroup = bloodGroupFilter.value;
+                    if (!selectedGroup) {
+                        displayRequests(allRequests); // Show all if “All” selected
+                    } else {
+                        const filtered = allRequests.filter(req => req.bloodType === selectedGroup);
+                        displayRequests(filtered);
+                    }
+                }
+
             })
             .catch(error => {
                 showLoading(false);
@@ -126,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Determine if actions should be enabled (only for Pending status)
             const isPending = request.status === 'Pending';
-
+//body of the table
             row.innerHTML = `
                 <td class="px-8 py-6 whitespace-nowrap text-lg font-semibold" >${request.id}</td>
                 <td class="px-8 py-6 whitespace-nowrap text-lg font-medium text-black text-center align-middle">${request.bloodType}</td>
