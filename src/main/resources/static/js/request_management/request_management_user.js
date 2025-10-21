@@ -13,13 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     thead.innerHTML = `
   <tr>
-    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-300 sticky top-0">Request ID</th>
-    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-300 sticky top-0">Blood Group</th>
-    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-300 sticky top-0">Units Needed</th>
-    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-300 sticky top-0">Urgency</th>
-    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-300 sticky top-0">Status</th>
-    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-300 sticky top-0">Requested On</th>
-    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-300 sticky top-0">Actions</th>
+    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-400 sticky top-0">Request ID</th>
+    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-400 sticky top-0">Blood Group</th>
+    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-400 sticky top-0">Units Needed</th>
+    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-400 sticky top-0">Urgency</th>
+    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-400 sticky top-0">Status</th>
+    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-400 sticky top-0">Requested On</th>
+    <th class="px-8 py-4 text-lg font-semibold text-center bg-gray-400 sticky top-0">Actions</th>
   </tr>
 `;
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 🧭 Make request table scrollable
     const tableContainer = document.getElementById('requestsTableBody').parentElement.parentElement;
-    tableContainer.style.maxHeight = '600px'; // adjust height as needed
+    tableContainer.style.maxHeight = '550px'; // adjust height as needed
     tableContainer.style.overflowY = 'auto';
     tableContainer.style.display = 'block';
 
