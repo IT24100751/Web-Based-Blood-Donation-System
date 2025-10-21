@@ -37,7 +37,7 @@ public class DonorModel implements Serializable {
 
     @Column(name = "contact_number")
     private String contactNumber;
-    
+    //  Observer pattern
     @OneToMany(mappedBy = "donor", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AppointmentModel> appointments = new ArrayList<>();
 
