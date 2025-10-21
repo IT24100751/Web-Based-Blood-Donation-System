@@ -108,7 +108,7 @@
                                 <i class="fas fa-sign-out-alt mr-2"></i>Logout
                             </button>
                         </div>
-                        <button type="button" id="deleteAccountBtn" class="bg-red-100 text-red-600 px-6 py-2 rounded-lg hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+                        <button type="button" id="deleteAccountBtn" class="bg-green-100 text-green-600 px-6 py-2 rounded-lg hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
                             <i class="fas fa-trash-alt mr-2"></i>Delete Account
                         </button>
                     </div>
@@ -119,7 +119,7 @@
         <!-- Footer -->
         <footer class="bg-gray-100 py-4">
             <div class="container mx-auto px-4 text-center text-gray-600">
-                <p>&copy; 2023 Blood Donation System. All rights reserved.</p>
+                <p>&copy; 2025 Blood Donation System. All rights reserved.</p>
             </div>
         </footer>
     </div>
